@@ -1,0 +1,46 @@
+clear
+close all
+addpath('isoscope_fn');
+
+%-- option 1: start from the raw imzML file (default)
+
+fn_imzML='Y:\qehf\MALDI-TIMS-TOF\Laith\230809_livM76-79_NEDC_15um\230809_livM79_NEDC_15um\230809_livm79_nedc_15um.imzML';
+option.threshold=0;
+option.profile=0;
+msi=msi_process(fn_imzML,option,1);
+%save('fn_mat.mat','msi','-v7.3');
+fname_pks='peaklist.xlsx'; %peak list
+livm_get_imax
+
+
+%% --------------------------------------------------------------------
+clear
+imax=readmatrix('livm81.csv');
+id1=1; id2=2; id3=3; % indices of the markers in the m/z list
+t1=0.75; t2=0.8; t3=0.96; % binarize thresholds for three markers
+%----------other parameter settings
+ln=[20,45]; % bond length limit for CV/PV detection
+angle=[30,90];  % angle limit for triad detection
+c1=0.0;  % portion of marker1 mixed with marker2(heme) for vein detection(0-0.1)
+sigma=1; % gaussian smooth
+eps=1e0;
+detLimit=10; %detection limit
+vein_size_min=3; %minimum vein size
+md='md_net.mat'; % vein classifier model
+method=2;
+confid=0.5; % vein type confidence level(0.5-1)
+step=49; %steps for each bond
+portion=[.2,.8];% central portion for linear fitting
+zones=floor(step*portion(1)):floor(step*portion(2)); 
+TIC_norm=1;  %TIC normalization? true 1 false 0
+pks=table2struct(readtable(fname_pks));
+%%
+ 
+livm_vein_detection
+livm_CV_PV_bond 
+livm_show_classification
+
+livm_readsig
+
+
+save('output.mat',"bond",'-mat');
