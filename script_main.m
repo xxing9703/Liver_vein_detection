@@ -1,10 +1,10 @@
 clear
 close all
+imax=readmatrix('liver_mouse_3.csv');% load ion intensity matrix
+
 fn_pks='peaklist.xlsx'; %peak list
 pks_=loadpks(fn_pks);
 pks=pks_.sdata;
-imax=readmatrix('liver_mouse_3.csv');% load ion matrix
-
 %% vein detection
 markers=[1,2,3]; % indices of the markers in the peak list
 sigma=1; % gaussian smooth
@@ -31,6 +31,7 @@ portion=[.2,.8];% central portion for linear fitting
 [bond,pks]=liv_readsig(bond,imax,step,portion,pks);
 
 %% plot averaged signals along the CV-PV axis for each metabolites.  
-pk_id=37;n=36;
+pk_id=1; %starting peak ID
+n=36; % number of peaks
 liv_plot_cv_pv(pks,pk_id,n);
 
