@@ -31,7 +31,6 @@ portion=[.2,.8];% central portion for linear fitting
 [bond,pks]=liv_readsig(bond,imax,step,portion,pks);
 
 %% plot averaged signals along the CV-PV axis for each metabolites.  
-pk_id=1; %starting peak ID
-n=36; % number of peaks
-liv_plot_cv_pv(pks,pk_id,n);
+idx=1:36; % plot signals for the first 36 metoblites
+liv_plot_cv_pv(pks,idx);
 
