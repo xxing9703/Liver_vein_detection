@@ -1,5 +1,7 @@
 # Liver_vein_detection
 
+MALDI imaging analysis.  Detects central & portal veins in liver.  Construct 1D PV-CV coordinates. Extract metabolite signal changes along the axis with >100 high quality PV-CV bond averages. 
+
 ## Description
 
 script_main.m
@@ -18,12 +20,15 @@ This code uses the training data stored in CV and PV folders to generate a CNN m
 
 
 ## Getting Started
-1. Download the ion intensity data from the link below, put them in the same folder
+1. Download this repo.
+
+2. Download the ion intensity matrix data from the link below, put them in the same folder
 https://figshare.com/s/9422d969f5724036b54a
 
-2. Run script_main.m in matlab. ("liver_mouse_3.csv" is used in this demo -- line 3, and can be replaced by any other data)
+3. Run script_main.m in matlab. ("liver_mouse_3.csv" is used in this demo -- line 3, and can be replaced by any other data)
    
-
+4. All results are saved in the variables "bonds" and "pks"
+   
 ### Installing
 
 Install matlab of the latest version. The following toolboxes are needed.
