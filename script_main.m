@@ -3,7 +3,7 @@ close all
 fn_pks='peaklist.xlsx'; %peak list
 pks_=loadpks(fn_pks);
 pks=pks_.sdata;
-imax=readmatrix('livm81.csv');% load ion matrix
+imax=readmatrix('liver_mouse_3.csv');% load ion matrix
 
 %% vein detection
 markers=[1,2,3]; % indices of the markers in the peak list
