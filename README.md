@@ -3,12 +3,16 @@
 ## Description
 
 script_main.m
+
 This is the main code that starts with the pre-generated ion intensity matrix, detects and classifies portal & central veins (PV & CV) in MALDI imaging data of mouse liver using 3 markers (the first 3 peaks in "peaklist.csv"), records the vein coordinates, constructs multiple PV-CV axes, and integrates ion signals along the PV-CV axis for each metabolite.  The images of the markers along with the detected veins and CV-PV bonds are plotted.  
 
+
 script_get_imax.m
+
 This code starts from the raw imzML file, parses the data and generates the ion intenisty matrix based on the given peak list (peaklist.csv).  Some core functions from the software of IsoScope (https://github.com/xxing9703/Isoscope) are used and put in the isoscope_fn folder. An example raw data can be downloaded here: 
 
 classify\Script_CVPV_classify_model.m
+
 This code uses the training data stored in CV and PV folders to generate a CNN model: md_net, which is used in script_main for vein classification.
 
 
