@@ -11,7 +11,7 @@ for i=1:n
     hold on
     plot([0,1],[ub/2,ub/2],'--b')
     title(pks(i+id-1).Name)
-    ylim([0,max(ub,max(tp))]); 
+    ylim([0,max(ub,max(tp)*1.1)]); 
     xlabel('PV - CV axis');
     ylabel('ion counts');
 end
