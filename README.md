@@ -27,9 +27,13 @@ https://figshare.com/s/9422d969f5724036b54a
 ### Installing
 
 Install matlab of the latest version. The following toolboxes are needed.
+
 *image processing
+
 *neural_network
+
 *statistics and machine learning 
+
 
 Try to increase the Java heap memory if you encountered memory overflow error when parsing the raw data using script_get_imax.m.
 https://www.mathworks.com/help/matlab/matlab_external/java-heap-memory-preferences.html
