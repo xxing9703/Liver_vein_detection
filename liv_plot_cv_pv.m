@@ -23,5 +23,5 @@ for i=1:n
     ylim([0,max(ub,max(tp'+err))]);     
     ylabel('ion counts');
     xticks([0,1]);
-    xticklabels({'PV','CV'});
+    xticklabels({'CV','PV'});
 end
