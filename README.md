@@ -29,6 +29,8 @@ https://figshare.com/s/9422d969f5724036b54a
    
 4. All results are saved in the variables "bonds" and "pks"
    
+5. an app version can be found in \webapp with the flexibility of tuning parameters.
+   
 ## Installing
 
 Install matlab (the latest version is preferred). The following toolboxes are needed.
@@ -38,7 +40,8 @@ Install matlab (the latest version is preferred). The following toolboxes are ne
   --Deep learning toolbox
 
   --statistics and machine learning toobox
-
+  
+  --App installation file: liver_CVPV.mlappinstall
 
 Try to increase the Java heap memory if you encountered memory overflow error when parsing the raw data using script_get_imax.m.
 https://www.mathworks.com/help/matlab/matlab_external/java-heap-memory-preferences.html
