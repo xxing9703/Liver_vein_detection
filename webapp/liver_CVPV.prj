@@ -1,0 +1,111 @@
+<deployment-project plugin="plugin.apptool" plugin-version="1.0">
+  <configuration build-checksum="1199086988" file="C:\Users\xxing\Documents\GitHub\Liver_vein_detection\webapp\liver_CVPV.prj" location="C:\Users\xxing\Documents\GitHub\Liver_vein_detection\webapp" name="liver_CVPV" target="target.mlapps" target-name="Package App">
+    <param.appname>liver_CVPV</param.appname>
+    <param.authnamewatermark>Xi Xing</param.authnamewatermark>
+    <param.email />
+    <param.company />
+    <param.icon />
+    <param.icons />
+    <param.summary>Automated detection of liver central and portal veins with MALDI signal integration along the CV-PV bond axis</param.summary>
+    <param.description />
+    <param.screenshot>${PROJECT_ROOT}\screenshot2.png</param.screenshot>
+    <param.version>1.0</param.version>
+    <param.products.name />
+    <param.products.id />
+    <param.products.version />
+    <param.platforms />
+    <param.output>${PROJECT_ROOT}</param.output>
+    <param.guid>d82397a5-3a97-4977-be07-faccf9194eeb</param.guid>
+    <unset>
+      <param.email />
+      <param.company />
+      <param.icon />
+      <param.icons />
+      <param.description />
+      <param.version />
+      <param.products.name />
+      <param.products.id />
+      <param.products.version />
+      <param.platforms />
+      <param.output />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}\liver_CVPV.mlapp</file>
+    </fileset.main>
+    <fileset.depfun>
+      <file>${PROJECT_ROOT}\get_I_veins.m</file>
+      <file>${PROJECT_ROOT}\get_p2p_signal.m</file>
+      <file>${PROJECT_ROOT}\idata2imgdata.m</file>
+      <file>${PROJECT_ROOT}\linearfit.m</file>
+      <file>${PROJECT_ROOT}\liv_plot_cv_pv_single.m</file>
+      <file>${PROJECT_ROOT}\liv_plot_cv_pv_single_bond.m</file>
+      <file>${PROJECT_ROOT}\liv_readsig.m</file>
+      <file>${PROJECT_ROOT}\liv_show_classification.m</file>
+      <file>${PROJECT_ROOT}\md_net.mat</file>
+      <file>${PROJECT_ROOT}\msi2rgb.m</file>
+      <file>${PROJECT_ROOT}\peaklist.xlsx</file>
+    </fileset.depfun>
+    <fileset.resources />
+    <fileset.package />
+    <build-deliverables>
+      <file location="C:\Users\xxing\Documents\GitHub\Liver_vein_detection" name="webapp" optional="false">C:\Users\xxing\Documents\GitHub\Liver_vein_detection\webapp</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Program Files\MATLAB\R2022b</root>
+      <toolboxes>
+        <toolbox name="matlabcoder" />
+        <toolbox name="embeddedcoder" />
+        <toolbox name="gpucoder" />
+        <toolbox name="fixedpoint" />
+        <toolbox name="matlabhdlcoder" />
+        <toolbox name="neuralnetwork" />
+      </toolboxes>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+      <toolbox>
+        <embeddedcoder>
+          <enabled>true</enabled>
+        </embeddedcoder>
+      </toolbox>
+      <toolbox>
+        <gpucoder>
+          <enabled>true</enabled>
+        </gpucoder>
+      </toolbox>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <matlabhdlcoder>
+          <enabled>true</enabled>
+        </matlabhdlcoder>
+      </toolbox>
+      <toolbox>
+        <neuralnetwork>
+          <enabled>true</enabled>
+        </neuralnetwork>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>10.0</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>

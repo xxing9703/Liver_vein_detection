@@ -1,8 +1,7 @@
-function liv_plot_cv_pv_single(ax,pk)
+function liv_plot_cv_pv_single(ax,pk,ub)
 % plots the averaged CV-PV signals for individual metabolite peaks
-% required input: pks after running script_main.  
 
-ub=1000;% ylim upper bond minimum
+%ub=1000;% ylim upper bond minimum
     tp=mean(pk.sig,2); 
     err=std(pk.sig');
 %     plot(0:1/50:1,tp'+err,"Color",[1,.9,1])
