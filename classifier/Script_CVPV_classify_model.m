@@ -37,19 +37,18 @@ load veins_train.mat
 II=II3;
 if isfolder('test_CV')
     rmdir('test_CV','s')
-else
-    mkdir('test_CV');
 end
 if isfolder('test_PV')
     rmdir('test_PV','s')
-else
-    mkdir('test_PV');
 end
 if isfolder('test_UN')
     rmdir('test_UN','s')
-else
-    mkdir('test_UN');
 end
+mkdir('test_CV');
+mkdir('test_PV');
+mkdir('test_UN');
+
+
 
 
 for i=1:10

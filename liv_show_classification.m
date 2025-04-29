@@ -1,4 +1,4 @@
-function liv_show_classification(I_veins,flag_pv)
+function liv_show_classification(ax, I_veins,flag_pv)
 idx_pv=find(flag_pv==1);
 idx_cv=find(flag_pv==0);
 I_pv=[]; I_cv=[];
@@ -22,5 +22,4 @@ for i=1:ceil(cc_max/120)-1
   tp2=[tp2; I_cv(:,i*120+1:(i+1)*120,:)];
 end
 III=[tp1,zeros(12*ceil(cc_max/120),12,3),tp2];
-figure
-imshow(III)
+imshow(III,'Parent',ax);

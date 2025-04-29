@@ -1,37 +1,28 @@
-<deployment-project plugin="plugin.apptool" plugin-version="1.0">
-  <configuration build-checksum="1199086988" file="C:\Users\xxing\Documents\GitHub\Liver_vein_detection\webapp\liver_CVPV.prj" location="C:\Users\xxing\Documents\GitHub\Liver_vein_detection\webapp" name="liver_CVPV" target="target.mlapps" target-name="Package App">
-    <param.appname>liver_CVPV</param.appname>
-    <param.authnamewatermark>Xi Xing</param.authnamewatermark>
-    <param.email />
-    <param.company />
-    <param.icon />
-    <param.icons />
-    <param.summary>Automated detection of liver central and portal veins with MALDI signal integration along the CV-PV bond axis</param.summary>
-    <param.description />
-    <param.screenshot>${PROJECT_ROOT}\screenshot2.png</param.screenshot>
-    <param.version>1.0</param.version>
-    <param.products.name />
-    <param.products.id />
-    <param.products.version />
-    <param.platforms />
-    <param.output>${PROJECT_ROOT}</param.output>
-    <param.guid>d82397a5-3a97-4977-be07-faccf9194eeb</param.guid>
+<deployment-project plugin="plugin.webdeploy" plugin-version="1.0">
+  <configuration file="C:\Users\xxing\Documents\GitHub\Liver_vein_detection\webapp\liver_CVPV1.prj" location="C:\Users\xxing\Documents\GitHub\Liver_vein_detection\webapp" name="liver_CVPV1" target="target.webdeploy" target-name="Web App Compiler">
+    <param.appname>liver_CVPV1</param.appname>
+    <param.intermediate>${PROJECT_ROOT}\liver_CVPV1</param.intermediate>
+    <param.files.only>${PROJECT_ROOT}\liver_CVPV1</param.files.only>
+    <param.output />
+    <param.checkbox>false</param.checkbox>
+    <param.logdir>${PROJECT_ROOT}\liver_CVPV1</param.logdir>
+    <param.target.type>subtarget.web.app</param.target.type>
+    <param.user.defined.mcr.options />
+    <param.support.packages />
     <unset>
-      <param.email />
-      <param.company />
-      <param.icon />
-      <param.icons />
-      <param.description />
-      <param.version />
-      <param.products.name />
-      <param.products.id />
-      <param.products.version />
-      <param.platforms />
+      <param.intermediate />
+      <param.files.only />
       <param.output />
+      <param.checkbox />
+      <param.logdir />
+      <param.target.type />
+      <param.user.defined.mcr.options />
+      <param.support.packages />
     </unset>
-    <fileset.main>
+    <fileset.web.main>
       <file>${PROJECT_ROOT}\liver_CVPV.mlapp</file>
-    </fileset.main>
+    </fileset.web.main>
+    <fileset.resources />
     <fileset.depfun>
       <file>${PROJECT_ROOT}\get_I_veins.m</file>
       <file>${PROJECT_ROOT}\get_p2p_signal.m</file>
@@ -45,10 +36,9 @@
       <file>${PROJECT_ROOT}\msi2rgb.m</file>
       <file>${PROJECT_ROOT}\peaklist.xlsx</file>
     </fileset.depfun>
-    <fileset.resources />
     <fileset.package />
     <build-deliverables>
-      <file location="C:\Users\xxing\Documents\GitHub\Liver_vein_detection" name="webapp" optional="false">C:\Users\xxing\Documents\GitHub\Liver_vein_detection\webapp</file>
+      <file location="${PROJECT_ROOT}\liver_CVPV1" name="liver_CVPV1.ctf" optional="false">C:\Users\xxing\Documents\GitHub\Liver_vein_detection\webapp\liver_CVPV1\liver_CVPV1.ctf</file>
     </build-deliverables>
     <workflow />
     <matlab>

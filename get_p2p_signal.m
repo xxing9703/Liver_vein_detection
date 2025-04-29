@@ -3,6 +3,7 @@
 % signal while sig00 finds signals at rounded coordinates. 
 function [sig,sig00]=get_p2p_signal(imax,meta,step,p1,p2)
 
+    
 X1=p1(1); Y1=p1(2);
 X2=p2(1); Y2=p2(2);
 
@@ -59,7 +60,6 @@ for i=1:length(x)
   end
 end
 sig00= imax(idx00,:);   % signal rounded to integer pixels
-
 
 
 
