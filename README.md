@@ -1,37 +1,44 @@
 # Liver_vein_detection
 
-MALDI imaging analysis.  Detects the repeating units of central & portal veins (CV & PV) in liver.  Construct 1D PV-CV coordinates. Extract signal changes along the axis for each metabolite, averaged over many (>100) selected PV-CV bonds of good quality. 
+Liver's structure contains many repeating units of lobules in hexagonal shape, consisting of central & portal veins (CV & PV), which are highlighed by markers in MALDI.  While CV-PV axis represents the simplest repeating unit and the primary spacial feature in liver, metabolomic gradient changes along the CV-PV axis could be reliably extracted computationally, taking advantage of the large mount of signal averaging.
 
-## Description
+This standalone app (main_liver_CVPV.mlapp) is fully automated and generalized to process the liver MALDI images for this purpose, with a user-friendly interface for testing different parameter settings and visualizing the results.  It takes the extracted MALDI ion intensitiy matrix as the input (spacial coordinates & ion signals for each metabolite from a pre-defined peak list), runs through a computational pipeline including: 1) vein identification 2) vein classification  3) construction & selection of CV-PV coordinates. 4) signal extraction and averaging,  and export the metabolomic signal changes along the 1-D coordiante.
 
--- **script_main.m**
-
-This is the main code that starts with the pre-generated ion intensity matrix, detects and classifies portal & central veins in MALDI imaging data of mouse liver using 3 markers (the first 3 peaks in "peaklist.csv"), records the centroid vein coordinates, constructs PV-CV axis that satisfies the bond length constraint, and integrates ion signals along the PV-CV axis for each metabolite.  The binary image of veins, the image of the markers with the detected veins and CV-PV bonds on top of it are plotted. The averaged ion signal changes along the axis for each metabolite can be plotted. 
+An old script version can be found in the branch "script-version".
 
 
--- **script_get_imax.m**
+## Getting Started (for visualization only)
 
-This code starts from the raw imzML/ibd file, parses the data, and generates the ion intenisty matrix based on the given peak list (peaklist.csv). The matrix consists of the metadata (X and Y coordinates in col 1 & 2), TIC (col 3) and ion intensities (col 4 to end). Some core functions from the software of IsoScope (https://github.com/xxing9703/Isoscope) are used and copied here in the isoscope_fn folder. An example raw data can be downloaded here: XXX
+1. Download or make a clone of this repo. Matlab needs to be installed (see Installation)
 
--- **classify\Script_CVPV_classify_model.m**
-
-This code uses the training data set (manually cropped and labeled 12 X 12 X 3 images of veins) stored in CV and PV folders to generate a CNN model: md_net, which is used in script_main for vein classification. get_I_veins.m is used to extract the cropped vein image in  testing data.
-
-
-
-## Getting Started
-1. Download this repo.
-
-2. Download the ion intensity matrix data from the link below, put them in the same folder
-https://figshare.com/s/9422d969f5724036b54a
-
-3. Run script_main.m in matlab. ("liver_mouse_3.csv" is used in this demo -- line 3, and can be replaced by any other data)
+2. Run "main_liver_CVPV.mlapp"
    
-4. All results are saved in the variables "bonds" and "pks"
-   
-5. an app version can be found in \webapp with the flexibility of tuning parameters.
-   
-## Installing
+3. Use the 7 speedbottons to load and visualize the pre-calculated results (.mat) for each sample tissue. (it will take ~1/2 mins to fully load)
+
+4. There are four tabs,
+   1) MALDI browser:  display individual ion images.  colormap and scales can be changed. 
+   2) CV-PV identification: detect veins & select bonds, subject to parameter settting.(see detailed usage) 
+   3) Vein classification: display vein classification results.
+   4) 1-D signal display:  show averaged metabolite signal changes along CV-PV axis.  Mouse click indivual bond on the image to display the signal from a single selected bond.
+ 
+##  Detailed usage of the app (Running)
+
+1. "peaklist.xlsx" defines both the markers and metabolite list to be extracted. The first three rows of metabolites are the 3 markers used for vein detection & classification. DO NOT change them or their orderings. User can change the remaining portion of the metabolite list of their interest.   
+
+2. Use the "Load" button to load an ion intensity matrixes.  Only one example "liver_mouse_1.xlsx" is included in this repo.  For testing all 7 examples, download from https://figshare.com/s/9422d969f5724036b54a and put them in the same folder.
+
+3. After successful loading, the first three tabs will show results of ion images, vein & bonds detection using the default settings.
+  1) in the second tab,  bond length (min & max) defines the ranges of bond length (in pixels) to be selected as good CV-PV bonds. The wider the range, the more bonds will be selected.
+  2) gaussion sigma is the smoothing filer parameter for vein detection using HEME signal.
+  3) min vein size is the minimum number of pixels of an isolated region that can be considered as a vein.
+  4) The signal distribution of each of the three markers are displayed, green and dotted lines defines the color thresholding for signal normalization, such that it can be generalized from data to data.  DO NOT change the marker threshold unless data from a very different dataset is loaded.
+  5) Click the update button after any change of parameters  
+
+4. After the veins & bonds are defined, click the Run button to compute bond singals along each CV-PV axis for each metabolites. It will normally take a coupon of minutes, and the animation of the bond calculation will show on the image.
+5. After the Run is completed, go to the last tab to visualize averaged and individual metabolomic signals along the CV-PV axis.
+
+ 
+## Installation
 
 Install matlab (the latest version is preferred). The following toolboxes are needed.
 
