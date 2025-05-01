@@ -28,11 +28,11 @@ An old script version can be found in the branch "script-version".
 2. Use the "Load" button to load an ion intensity matrixes.  Only one example "liver_mouse_1.xlsx" is included in this repo.  For testing all 7 examples, download from https://figshare.com/s/9422d969f5724036b54a and put them in the same folder.
 
 3. After successful loading, the first three tabs will show results of ion images, vein & bonds detection using the default settings.
-  1) in the second tab,  bond length (min & max) defines the ranges of bond length (in pixels) to be selected as good CV-PV bonds. The wider the range, the more bonds will be selected.
-  2) gaussion sigma is the smoothing filer parameter for vein detection using HEME signal.
-  3) min vein size is the minimum number of pixels of an isolated region that can be considered as a vein.
-  4) The signal distribution of each of the three markers are displayed, green and dotted lines defines the color thresholding for signal normalization, such that it can be generalized from data to data.  DO NOT change the marker threshold unless data from a very different dataset is loaded.
-  5) Click the update button after any change of parameters  
+   1) in the second tab,  bond length (min & max) defines the ranges of bond length (in pixels) to be selected as good CV-PV bonds. The wider the range, the more bonds will be selected.
+   2) gaussion sigma is the smoothing filer parameter for vein detection using HEME signal.
+   3) min vein size is the minimum number of pixels of an isolated region that can be considered as a vein.
+   4) The signal distribution of each of the three markers are displayed, green and dotted lines defines the color thresholding for signal normalization, such that it can be generalized from data to data.  DO NOT change the marker threshold unless data from a very different dataset is loaded.
+   5) Click the update button after any change of parameters  
 
 4. After the veins & bonds are defined, click the Run button to compute bond singals along each CV-PV axis for each metabolites. It will normally take a coupon of minutes, and the animation of the bond calculation will show on the image.
 5. After the Run is completed, go to the last tab to visualize averaged and individual metabolomic signals along the CV-PV axis.
