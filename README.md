@@ -37,7 +37,8 @@ An old script version can be found in the branch "script-version".
 4. After the veins & bonds are defined, click the Run button to compute bond singals along each CV-PV axis for each metabolites. It will normally take a coupon of minutes, and the animation of the bond calculation will show on the image.
 5. After the Run is completed, go to the last tab to visualize averaged and individual metabolomic signals along the CV-PV axis.
 
- 
+ <img src="screenshot1.png">
+ <img src="screenshot2.png">
 ## Installation
 
 Install matlab (the latest version is preferred). The following toolboxes are needed.
